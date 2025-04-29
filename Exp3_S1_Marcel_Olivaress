@@ -1,0 +1,202 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.mavenproject1;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author USUARIO
+ */
+public class Mavenproject1 {
+
+
+    static String nombreTeatro = "Teatro Moro";
+    static double descuento = 0;
+    static double precioEntrada = 0;
+    static double descuentoAplicado =0;
+    static double precioFinal = 0;
+    static double ingresosTotales;
+    static String tipoUbicacion = "";
+    static ArrayList<String> resumenVentas = new ArrayList<>();
+    
+
+    public static void main(String[] args) {
+       Scanner Scanner = new Scanner(System.in);
+        
+        
+        
+        for (;;) {
+            
+            System.out.println("Bienvenidos al menu de ventas del " + nombreTeatro);
+            System.out.println("Seleccione su preferencia");
+            System.out.println("");
+            System.out.println("1.- Comprar entradas");
+            System.out.println("2.- Resumen de compra");
+            System.out.println("3.- Generar boleta");
+            System.out.println("4.- Resumen ingresos totales");
+            System.out.println("5.- Salir");
+            
+            
+            int menu = Scanner.nextInt();
+            Scanner.nextLine();
+            
+            switch (menu) {
+                case 1: 
+                    System.out.println("Favor, seleccione el sector de preferencia");
+                    System.out.println("1.- Vip con un valor de $20.000");
+                    System.out.println("2.- Platea con un valor de $15.000");
+                    System.out.println("3.- General con un valor de $10.000");
+                    
+                    int entrada = Scanner.nextInt();
+                    Scanner.nextLine();
+                    
+                    switch (entrada) {
+                        case 1:
+                            System.out.println(tipoUbicacion = "Vip" );
+                            
+                            precioEntrada = 20000;
+                            
+                            System.out.println("Validaremos si tienes acceso a algun descuento");
+                            System.out.println("1.- Soy estudiante");
+                            System.out.println("2.- Soy una persona de tercera edad");
+                            System.out.println("3.- No soy ninguna de las anteriores");
+            
+                            int promo = Scanner.nextInt();
+                            Scanner.nextLine();
+            
+                            switch (promo) {
+                                    case 1:
+                                        System.out.println("Has obtenido el descuento estudiantil");
+                    
+                                        descuento = 0.10;
+                                        break;
+                                    case 2:
+                                        System.out.println("Has obtenido el descuento tercera edad");
+                    
+                                        descuento = 0.15;
+                                        break;
+                                    case 3:
+                                        System.out.println("No cualificas para ningun descuento");
+                    
+                                        descuento = 1;
+                                        break;
+                                    default:
+                                         System.out.println("Favor, elige una opcion correspondiente");
+                                    return;
+                            }
+                            break;
+                            
+                        case 2: 
+                            System.out.println(tipoUbicacion = "Platea");
+                            
+                            precioEntrada = 15000;
+                            
+                            System.out.println("Validaremos si tienes acceso a algun descuento");
+                            System.out.println("1.- Soy estudiante");
+                            System.out.println("2.- Soy una persona de tercera edad");
+                            System.out.println("3.- No soy ninguna de las anteriores");
+            
+                            int promo1 = Scanner.nextInt();
+                            Scanner.nextLine();
+            
+                            switch (promo1) {
+                                case 1:
+                                    System.out.println("Has obtenido el descuento estudiantil");
+                    
+                                    descuento = 0.10;
+                                    break;
+                                case 2:
+                                    System.out.println("Has obtenido el descuento tercera edad");
+                    
+                                    descuento = 0.15;
+                                    break;
+                                case 3:
+                                    System.out.println("No cualificas para ningun descuento");
+                    
+                                    descuento = 1;
+                                    break;
+                                default:
+                                    System.out.println("Favor, elige una opcion correspondiente");
+                                return;
+                             }
+                         break;
+                        case 3:
+                            System.out.println(tipoUbicacion = "General");
+                            
+                            precioEntrada = 10000;
+                            
+                            System.out.println("Validaremos si tienes acceso a algun descuento");
+                            System.out.println("1.- Soy estudiante");
+                            System.out.println("2.- Soy una persona de tercera edad");
+                            System.out.println("3.- No soy ninguna de las anteriores");
+            
+                             int promo2 = Scanner.nextInt();
+                             Scanner.nextLine();
+            
+                            switch (promo2) {
+                                case 1:
+                                   System.out.println("Has obtenido el descuento estudiantil");
+                    
+                                   descuento = 0.10;
+                                   break;
+                                case 2:
+                                   System.out.println("Has obtenido el descuento tercera edad");
+                    
+                                   descuento = 0.15;
+                                   break;
+                                case 3:
+                                   System.out.println("No cualificas para ningun descuento");
+                    
+                                   descuento = 1;
+                                   break;
+                                default:
+                                   System.out.println("Favor, elige una opcion correspondiente");
+                                  return;
+                            }
+                        default:
+                            System.out.println("Favor, elige una opcion correspondiente");
+                    }
+                    
+                    descuentoAplicado = precioEntrada * descuento;
+                    precioFinal = precioEntrada - descuentoAplicado;
+                    
+                     resumenVentas.add("Ubicación: "+tipoUbicacion+" | Precio base: $"+precioEntrada +
+                            " | Descuento: $"+descuentoAplicado+" | Precio final: $"+precioFinal);
+                     
+                    ingresosTotales += precioFinal;
+                     
+                     System.out.println("La entrada fue comprada con exito");
+                    break;
+                case 2:
+                    System.out.println("Resumen de compra:");
+                    for (String venta : resumenVentas) {
+                            System.out.println(venta);
+                    }
+                    break;
+                case 3:
+                    System.out.println("-----------------------------------------------");
+                    System.out.println(               nombreTeatro);
+                    System.out.println("-----------------------------------------------");
+                    for (String venta : resumenVentas) {
+                            System.out.println(venta);
+                        }
+                    System.out.println("Gracias por su visita al "+nombreTeatro);
+                    System.out.println("-----------------------------------------------");
+                    break;
+                case 4:
+                    System.out.println("Resumen de los ingresos totales");
+                    System.out.print(":$"+ingresosTotales);
+                    break;
+                case 5:
+                    System.out.println("Gracias por su visita al"+nombreTeatro+"Vuelva pronto");
+                    
+            }
+         }   
+    }
+}
+    
+
