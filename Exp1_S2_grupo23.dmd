@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Exp1_S2_grupo23" id="A9D9B657-E79E-4334-53D0-BC3A33BA9B08" version="3.5">
-<createdBy>juanc</createdBy>
-<createdTime>2025-08-18 20:38:06 UTC</createdTime>
-<ownerDesignName>modelo</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>A9D9B657-E79E-4334-53D0-BC3A33BA9B08</designId>
-</OSDM_Design>
